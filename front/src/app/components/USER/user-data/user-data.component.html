@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-3 " style="background-color:  #80CED7;">
+        <div class="text-center mt-5">
+            <img [src]="profile.urlFoto" height="265px" width="265px">
+        </div>
+        <h2 class="text-center mt-4">{{profile.fullName}}</h2>
+    </div>
+    <div class="col row d-flex justify-content-center align-items-center"
+        style="background: linear-gradient(90deg, rgba(128,206,215,1) 0%, rgba(128,206,215,0.35057773109243695) 100%);">
+        <div class="col-5 d-flex justify-content-center flex-column ms-5 mb-5 pb-5">
+            <div class="my-4 ms-5">
+                <i class="bi bi-envelope-fill">
+                </i>
+                <span class="ms-1">
+                    {{profile.emai}}
+                </span>
+            </div>
+            <div class="my-4 ms-5">
+                <i class="bi bi-person-vcard"></i>
+                <span class="ms-1">
+                    {{profile.dni}}
+                </span>
+            </div>
+        </div>
+        <div class="col-5 d-flex justify-content-center flex-column ms-5 mb-5 pb-5">
+            <div class="my-4 ms-5">
+                <i class="bi bi-calendar3"></i>
+                <span class="ms-1">
+                    {{profile.birthDate}}
+                </span>
+            </div>
+            <div class="my-4 ms-5">
+                <i class="bi bi-telephone-fill"></i>
+                <span class="ms-1">
+                    {{profile.tlfn}}
+                </span>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>

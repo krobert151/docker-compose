@@ -1,0 +1,16 @@
+<div class="">
+    <table class="table table-bordered" style="width: 680px;">
+        <thead>
+            <tr>
+                <th class="th" scope="col">Youngest Patients</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of patients">
+                <td class="border border-end-0">{{p.fullName}}</td>
+                <td class="border border-start-0">{{p.birthDate}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,24 @@
+table thead tr th{
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+table  {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+table{
+    margin-top: 2%;
+ background-color: rgb(23, 3, 68);
+}
+.th{
+    background-color: rgb(23, 3, 68);
+    color: white;
+    border-color: rgb(23, 3, 68);
+    border-top-color: rgb(23, 3, 68);
+}
+thead{
+    border-color: rgb(23, 3, 68);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}

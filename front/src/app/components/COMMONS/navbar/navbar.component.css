@@ -1,0 +1,48 @@
+nav {
+    padding: 0px;
+}
+
+.navbar-brand img {
+    width: 200px;
+    margin-bottom: 7px;
+    margin-top: 7px;
+}
+
+a.navbar-brand {
+    padding: 0px;
+    padding-top: 10px;
+}
+
+nav {
+    background-color: white !important;
+}
+
+.full-width {
+    width: 100%;
+}
+
+ul li {
+    margin-left: 10%;
+}
+
+.row a:first-child {
+    margin-left: 2%;
+}
+
+.navbar-nav a {
+    text-decoration: none;
+    color: rgb(141, 141, 141);
+}
+
+.navbar-nav a:hover {
+    color: rgb(78, 78, 78);
+}
+
+li>a.active {
+    color: #C62E65 !important;
+}
+
+img {
+    width:200px;
+    padding: 0;
+}

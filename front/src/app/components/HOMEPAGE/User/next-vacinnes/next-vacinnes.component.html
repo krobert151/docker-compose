@@ -1,0 +1,29 @@
+<div class="">
+    <table class="table table-bordered " style="width: 680px;">
+        
+        <thead >
+          <tr >
+            <th class="th" scope="col">Next vaccines</th>
+          
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let nextVaccine of list">
+            <td>
+              <div class="row">
+                <div class="col">
+                  <span>
+                    {{nextVaccine.completeName}}-{{nextVaccine.vaccineType}}
+                  </span>
+                </div>
+                <div class="col-2">
+                  <span>
+                    {{nextVaccine.month}} Month
+                  </span>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>

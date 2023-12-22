@@ -1,0 +1,35 @@
+<div class="mb-5">
+    <div class="row  header">
+        <div class="col d-flex flex-column justify-content-between py-3">
+            <h2>{{dependient.fullName}}</h2>
+            <p>{{dependient.emai}}</p>
+        </div>
+        <div class="col-4 d-flex justify-content-center align-items-center">
+            <img class="profileimage" [src]="dependient.urlFoto" alt="">
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center pt-3">
+        <div class="col-5">
+            <div class="mb-3">
+                <i class="bi bi-person-vcard"></i>
+                <span class="ms-1">
+                    {{dependient.dni}}
+                </span>
+            </div>
+            <div>
+                <i class="bi bi-calendar3"></i>
+                <span class="ms-1">
+                    {{dependient.birthDate}}
+                </span>
+            </div>
+        </div>
+        <div class="col-5">
+            <div>
+                <i class="bi bi-telephone-fill"></i>
+                <span class="ms-1">
+                    {{dependient.tlfn}}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

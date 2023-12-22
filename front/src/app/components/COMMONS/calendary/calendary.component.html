@@ -1,0 +1,128 @@
+<style>
+  .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  table {
+    width: 100%;
+
+    border-collapse: separate;
+    border-spacing: 10px;
+  }
+
+  th,
+  td {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ddd;
+    text-align: center;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+</style>
+
+<div class="container">
+  <table class="table-container">
+    <thead>
+      <tr>
+        <th class="border-0"></th>
+        <th class="shadow p-3 mb-5 bg-body-tertiary rounded" *ngFor="let edad of e; let i = index" class="border-0">{{
+          edad.edad }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container>
+        <tr *ngFor="let vacuna of calendar.allVaccine">
+          <td class="shadow p-3 mb-5 bg-body-tertiary rounded w-25 ">{{ vacuna.nameVacune }}</td>
+          @for (edad of e; track $index) {
+          <ng-container>
+            @if (hasTheAge(calendar,edad) == true) {
+            <td class="shadow p-3 mb-5  rounded col-md-6" [ngStyle]=" {'background-color': '#ae0a464f'}">
+              @if (
+              isAdministred(vacuna, edad);
+              ) { <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-circle-fill"
+                viewBox="0 0 16 16">
+                <circle cx="8" cy="8" r="8" />
+              </svg>}@else if (
+              isNotAdministred(calendar, vacuna, edad)
+              ){
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-circle-fill"
+                viewBox="0 0 16 16">
+                <circle cx="8" cy="8" r="8" />
+              </svg>
+              }@else if (
+              isPendingAdministred(calendar,vacuna,edad)
+              ) {
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-circle-fill"
+                viewBox="0 0 16 16">
+                <circle cx="8" cy="8" r="8" />
+              </svg>
+              }
+            </td>
+            }@else {
+            <td class="shadow p-3 mb-5 bg-body-tertiary rounded col-md-6">
+              @if (
+              isAdministred(vacuna, edad);
+              ) { <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-circle-fill"
+                viewBox="0 0 16 16">
+                <circle cx="8" cy="8" r="8" />
+              </svg>}@else if (
+              isNotAdministred(calendar, vacuna, edad)
+              ){
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-circle-fill"
+                viewBox="0 0 16 16">
+                <circle cx="8" cy="8" r="8" />
+              </svg>
+              }@else if (
+              isPendingAdministred(calendar,vacuna,edad)
+              ) {
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-circle-fill"
+                viewBox="0 0 16 16">
+                <circle cx="8" cy="8" r="8" />
+              </svg>
+              }
+            </td>
+            }
+
+
+            <ng-template #noCell>
+              <td class="shadow p-3 mb-5 bg-body-tertiary rounded" style="color: transparent;">
+
+              </td>
+            </ng-template>
+          </ng-container>
+          }
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+  <div class="container d-flex shadow p-3 mb-5 bg-body-tertiary rounded ms-2 " style="background-color: white;">
+    <div class="d-flex ">
+      <h4>Pending:</h4>
+      <span class="pt-1 ms-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"
+          class="bi bi-circle-fill" viewBox="0 0 16 16">
+          <circle cx="8" cy="8" r="8" />
+        </svg></span>
+
+    </div>
+    <div class="d-flex ms-5">
+      <h4>Record:</h4>
+      <span class="pt-1 ms-2"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green"
+          class="bi bi-circle-fill" viewBox="0 0 16 16">
+          <circle cx="8" cy="8" r="8" />
+        </svg></span>
+
+    </div>
+    <div class="d-flex ms-5">
+      <h4>faC:</h4>
+      <span class="pt-1 ms-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+          class="bi bi-circle-fill" viewBox="0 0 16 16">
+          <circle cx="8" cy="8" r="8" />
+        </svg></span>
+    </div>
+
+  </div>
+
+</div>

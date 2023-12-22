@@ -1,0 +1,61 @@
+services:
+
+    back:
+        image: 'rrebolledo/back:v1'
+        build:
+            context: ./back/
+            dockerfile: Dockerfile
+        expose:
+            - 8080
+        ports:
+            - "8080:8080"
+        networks:
+            - back
+            - front
+        environment:
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://pg_database:5432/proyecto
+            - SPRING_DATASOURCE_USERNAME=postgres
+            - SPRING_DATASOURCE_PASSWORD=12345678
+            - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+        depends_on:
+            - pg_database
+        restart: unless-stopped
+
+    front:
+        image: 'rrebolledo/front:v1'
+        build:
+            context: ./front/
+            dockerfile: Dockerfile
+        expose:
+            - 80
+        ports:
+            - "8080:80"
+        networks:
+            - front
+        container_name: front
+        restart: unless-stopped
+
+    pg_database:
+        image: postgres:16-alpine
+        environment:
+            - POSTGRES_DB=proyecto
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=12345678
+        container_name: pg_database
+        restart: on-failure
+        expose:
+            - 5432
+        ports:
+            - "5432:5432"
+        volumes:
+            - data:/var/lib/postgresql/data
+        networks:
+            - back
+
+volumes:
+    data:
+
+
+networks:
+    front:
+    back:

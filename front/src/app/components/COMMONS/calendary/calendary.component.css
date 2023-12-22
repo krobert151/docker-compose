@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+
+}
+
+div div {
+  width: 450px;
+}
+
+
+table {
+  width: 100%;
+  border-spacing: 10px;
+
+}
+
+.red {
+  background-color: #ae0a464f;
+}

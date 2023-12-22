@@ -1,0 +1,90 @@
+<div class="screen container">
+  @if (pageLogin) {
+  <div class="row" style="padding-top: 20px;">
+    <div class="col-7 offset-1">
+      <p>Welcome to <strong>VAXCONNECT</strong></p>
+      <h1>Log in</h1>
+    </div>
+    <div class="col-4">
+      <p style="margin-bottom: 0; color: #8D8D8D">No Account?</p>
+      <p class="change-page" (click)="changePage()">Sign up</p>
+    </div>
+    <button class="col-10 offset-1 button">
+      <img src="assets/img/g.png">
+      Sign up with Google
+    </button>
+    <form class="col-10 offset-1" [formGroup]="profileLogin" (ngSubmit)="login()">
+      <div class="mb-3">
+        <label for="emailLog" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="emailLog" aria-describedby="emailHelp"
+          placeholder="Username or email address" formControlName="mail">
+      </div>
+      <div class="mb-3">
+        <label for="passwordLog" class="form-label">Password</label>
+        <input type="password" class="form-control" id="passwordLog" placeholder="Password" formControlName="password">
+      </div>
+      <button type="submit" class="button-submit">Log in</button>
+    </form>
+  </div>
+  } @else {
+  <div class="row" style="padding-top: 20px;">
+    <div class="col-7 offset-1" style="margin-bottom: 10px;">
+      <p>Welcome to <strong>VAXCONNECT</strong></p>
+      <h1>Sign Up</h1>
+    </div>
+    <div class="col-4">
+      <p style="margin-bottom: 0; color: #8D8D8D">Already have an account?</p>
+      <p class="change-page" (click)="changePage()">Log In</p>
+    </div>
+    <form class=" col-10 offset-1" [formGroup]="profileRegister" (ngSubmit)="register()">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          placeholder="email address" formControlName="email">
+      </div>
+      <div class="row" style="margin-bottom: 10px !important">
+        <div class="col-6" style="margin-bottom: 10px !important">
+          <label for="exampleInputEmail1" class="form-label">Name</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Name" formControlName="name">
+        </div>
+        <div class="col-6" style="margin-bottom: 10px !important">
+          <label for="exampleInputEmail1" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Last name" formControlName="lastName">
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+          formControlName="password">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Repeat Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Repeat password"
+          formControlName="verifyPassword">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">DNI</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="your dni"
+          formControlName="dni">
+      </div>
+        <div class="row" style="margin-bottom: 10px !important">
+          <div class="col-6" style="margin-bottom: 10px !important">
+            <label for="phonenumber" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" id="phonenumber" aria-describedby="phonenumber"
+              placeholder="Phone number" formControlName="phone">
+          </div>
+          <div class="col-6" style="margin-bottom: 10px !important">
+            <label for="birthday" class="form-label">BirthDay</label>
+            <input type="date" class="form-control" id="birthday" aria-describedby="birthday" placeholder="Birth day"
+              formControlName="birthDay">
+          </div>
+        </div>
+      
+      <button type="submit" class="button-submit">Sign In</button>
+    </form>
+  </div>
+  }
+
+</div>

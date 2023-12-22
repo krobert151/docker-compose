@@ -1,0 +1,13 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+
+.profileimage {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.header {
+    background-color: #80CED7;
+    border-top-right-radius: 12pt;
+    border-top-left-radius: 12pt;
+}

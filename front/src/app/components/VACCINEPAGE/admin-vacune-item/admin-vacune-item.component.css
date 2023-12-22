@@ -1,0 +1,17 @@
+.card-header {
+    background-color: #80CED7;
+}
+
+.card {
+    margin: 0;
+    padding: 0;
+}
+
+.btn {
+    float: right;
+    margin: 10px;
+}
+
+.color {
+    background-color: #C62E65;
+}

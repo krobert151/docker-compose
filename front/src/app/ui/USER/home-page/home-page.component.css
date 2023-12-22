@@ -1,0 +1,30 @@
+.img{
+    margin-top: 2%;
+    margin-left: 6%;
+    
+}
+.title{
+    color: white;
+    margin-top: 4%;
+    margin-left: 20%;
+    width: 600px;
+}
+.btn{
+    background-color: rgb(128, 206, 215);
+    margin-left: 70%;
+    margin-top: 2%;
+    width: 250px;
+    height: 60px;
+    border-radius: 20px;
+}
+.contendor{
+    width: 100%;
+    height: 507px;
+    background-color: rgb(217, 217, 217);
+    display: flex;
+}
+.contendor .div{
+    margin-left: 8%;
+    padding-top: 5%;
+    width: 650px;
+}

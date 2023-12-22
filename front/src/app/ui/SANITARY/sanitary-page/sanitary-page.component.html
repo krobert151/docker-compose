@@ -1,0 +1,124 @@
+
+<div class="container ">
+    <div class="row">
+        <aside class="col-md-offset-1 col-md-2">
+            <div class="bg-primary-subtle w-100">
+                <h3>Roles</h3>
+            </div>
+            <div>
+                <div class="form-check">
+                    <input [routerLink]="['/patients-page']" routerLinkActive="active" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label  class="form-check-label" for="flexRadioDefault1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+                          </svg>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input [routerLink]="['/sanitary-page']" routerLinkActive="active" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lock" viewBox="0 0 16 16">
+                            <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m0 5.996V14H3s-1 0-1-1 1-4 6-4c.564 0 1.077.038 1.544.107a4.524 4.524 0 0 0-.803.918A10.46 10.46 0 0 0 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664zM9 13a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1"/>
+                          </svg>
+                    </label>
+                  </div>
+            </div>
+        </aside>
+        <!-- @if () {}  if para mostrar listado pacientes o sanitaross-->
+        <div class="col-md-offset-1 col-md-9">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Avatar</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Birthdate</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody >
+                    
+                    
+                    <tr *ngFor="let p of sanitary">
+                        <td></td>
+                        <td class="pt-4">{{p.fullname}} </td>
+                        <td class="pt-4">{{p.email}}</td>
+                        <td class="pt-4">{{p.birthDate}}</td>
+                        
+                        <td class="pt-3">
+                            <button type="button" class="btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+                                    class="bi bi-calendar2-week" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z" />
+                                    <path
+                                        d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5zM11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+                                </svg>
+                            </button>
+                        </td>
+                        <td class="pt-3">
+                            <button type="button" class="btn" (click)="deleteSanitary(p.uuid)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+                                    class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path
+                                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                                    <path
+                                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                                </svg>
+                            </button>
+                        </td>
+                        <td class="pt-3">
+                            <button type="button" class="btn" (click)="openOffcanvas(patientDetails, p)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+                                    class="bi bi-info-square" viewBox="0 0 16 16">
+                                    <path
+                                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                                    <path
+                                        d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                                </svg>
+                            </button>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<ng-template #patientDetails let-offcanvas>
+    <div class="offcanvas-head">
+        <button type="button" class="btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-pencil-square"
+                viewBox="0 0 16 16">
+                <path
+                    d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                <path fill-rule="evenodd"
+                    d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+            </svg>
+        </button>
+        <div class="offcanvas-img">
+            <img src="{{ selectedPatient?.img }}" class="img-responsive" alt="patient avatar" />
+        </div>
+        <div class="d-flex mb-3 mt-3 justify-content-center">
+            <h1 class="offcanvas-title text-light mr-5">
+                <strong>{{selectedPatient?.fullname}}</strong>
+            </h1>
+        </div>
+    </div>
+    <div class="offcanvas-body p-4">
+        <h2 class="mb-0">Email</h2>
+        <h3>{{selectedPatient?.email}}</h3>
+        <h2 class="mb-0">Dni</h2>
+        <h3>{{selectedPatient?.dni}}</h3>
+        <h2 class="mb-0">BirthDate</h2>
+        <h3>{{selectedPatient?.birthDate}}</h3>
+        <h2 class="mb-0">Phone number</h2>
+        <h3>{{selectedPatient?.phoneNumber}}</h3>
+        
+      
+
+    </div>
+</ng-template>
+

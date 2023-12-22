@@ -1,0 +1,21 @@
+<form [formGroup]="searchWord" (ngSubmit)="search()" class="input-group row justify-content-end"
+    style="margin-top: 10px; float: right;">
+    <input type="text" class=" col-2" placeholder="Buscar..." aria-label="Buscar" aria-describedby="btnBuscar"
+        formControlName="word">
+    <div class="input-group-append col-2">
+        <button class="btn btn-primary" type="submit" id="btnBuscar">Buscar</button>
+    </div>
+</form>
+
+<div class="cositas d-flex align-items-center justify-content-center row p-0 mt-2"
+    style="min-height: 400px; width: 100%;">
+    <ng-container *ngFor="let i of items">
+        <div class="row my-2 mx-1 p-0 d-flex col-sm-5 col-md-5">
+            <app-vacune-item [vacune]="i"></app-vacune-item>
+        </div>
+    </ng-container>
+</div>
+
+<mat-paginator [length]="pageLength" [pageSize]="10" showFirstLastButtons="true" (page)="changePage($event)"
+    aria-label="Select page">
+</mat-paginator>

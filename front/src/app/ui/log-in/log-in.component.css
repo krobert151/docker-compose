@@ -1,0 +1,41 @@
+.screen {
+    background-color: #80CED7;
+    width: 25%;
+    border-radius: 30px;
+    margin-top: 2%;
+    padding-bottom: 20px;
+}
+
+.button {
+    background-color: #E9F1FF;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    color: #4285F4;
+}
+
+div {
+    margin-bottom: 40px;
+}
+
+
+form {
+    margin-top: 4%;
+}
+
+.button-submit {
+    width: 100%;
+    border-radius: 10px;
+    border: 0;
+    padding: 10px;
+    color: white;
+    background-color: #170344;
+}
+
+img {
+    width: 25px;
+}
+
+.change-page {
+    cursor: pointer;
+}
